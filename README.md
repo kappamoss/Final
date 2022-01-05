@@ -5,10 +5,10 @@ The given training dataset includes 3777 images, each image contains a certain s
 # Environment
 GTX 2080 super
 
-# Reproducing Submission (CNN+Kfold+data aug)
-Download the dataset from https://www.kaggle.com/c/the-nature-conservancy-fisheries-monitoring.
-Set the download dataset's root according to your file path.
-Run the "trainbest.py" file and save the weight.h5 (or you can use my model weight.).
-Run the "trainbest.py" file to get the CSV file.
+# Reproducing Submission (CNN+Kfold+data aug)  
+Download the dataset from https://www.kaggle.com/c/the-nature-conservancy-fisheries-monitoring.  
+Set the download dataset's root according to your file path.  
+Run the "trainbest.py" file and save the weight.h5 (or you can use my model weight.).  
+Run the "trainbest.py" file to get the CSV file.  
 
-Note: if you modify the k fold number from "trainbest.py" file, you have to modify the k fold number in "trainbest.py" file too.
+Note: if you modify the k fold number from "trainbest.py" file, you have to modify the k fold number in "trainbest.py" file too.  
