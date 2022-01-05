@@ -165,12 +165,9 @@ def run_cross_validation_create_models(nfolds=10):
         callbacks = [
             EarlyStopping(monitor='val_loss', patience=10, verbose=0),
         ]
-        datagen = ImageDataGenerator( 
-            rotation_range = 90,  
-            width_shift_range = 0.2, 
-            height_shift_range = 0.2, 
-            horizontal_flip=True,
-            zoom_range = 0.3)
+       datagen = ImageDataGenerator(
+              rotation_range=20,
+              horizontal_flip=True)
 
         datagen.fit(X_train)
 
