@@ -11,4 +11,4 @@ Set the download dataset's root according to your file path.
 Run the "trainbest.py" file and save the weight.h5 (or you can use my model weight.).  
 Run the "trainbest.py" file to get the CSV file.  
 
-Note: if you modify the k fold number from "trainbest.py" file, you have to modify the k fold number in "trainbest.py" file too.  
+Note: if you modify the k fold number from "trainbest.py" file, you have to modify the k fold number in "predictbest.py" file too.  
