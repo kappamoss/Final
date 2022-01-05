@@ -1,5 +1,6 @@
 import numpy as np
-np.random.seed(2000)
+
+np.random.seed(1984)
 
 import os
 import glob

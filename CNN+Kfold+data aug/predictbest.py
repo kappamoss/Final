@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-np.random.seed(2000)
+np.random.seed(1984)
 
 import os
 import glob
@@ -54,16 +54,19 @@ def create_model():
     model.add(Dropout(0.5))
     model.add(Dense(8, activation='softmax'))
 
+    """# model = tf.keras.applications.InceptionV3()
+    # create the base pre-trained model
     model = tf.keras.applications.InceptionV3(weights='imagenet', include_top=False)
 
-   
+    # add a global spatial average pooling layer
     x = model.output
     x = tf.keras.layers.GlobalAveragePooling2D()(x)
-   
+    # let's add a fully-connected layer
     x = tf.keras.layers.Dense(1024, activation='relu')(x)
+    # and a logistic layer -- let's say we have 8 classes
     predictions = tf.keras.layers.Dense(8, activation='softmax')(x)
 
-  
+    # this is the model we will train
     model = Model(inputs=model.input, outputs=predictions)"""
 
     sgd = SGD(lr=5e-4, decay=decay, momentum=0.89, nesterov=True)
@@ -125,11 +128,10 @@ def run_cross_validation_process_test(models):
 
 if __name__ == '__main__':
     models = []
-    num_folds = 2
+    num_folds = 20
     decay = 1e-5
     for i in range(num_folds):
-       model = create_model()
-       model.load_weights('model'+str(i+1)+'.h5')
-       models.append(model)
-    models.append(model)
+        model = create_model()
+        model.load_weights('model'+str(i+1)+'.h5')
+        models.append(model)
     run_cross_validation_process_test(models)
